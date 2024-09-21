@@ -31,9 +31,6 @@
 В итоге программа выводит позиции, соответствующие точным вхождениям образца в строку, на основе вычисленных значений Z-функции.
 
 \subsection*{Описание программы}
-
-Ваше описание функций может быть переформатировано в список следующим образом:
-
 \begin{itemize}
 \item Функция \texttt{computeZArray} вычисляет Z-функцию для входной строки. Значение Z[i] соответствует длине наибольшей подстроки, начинающейся с позиции i, которая также является префиксом всей строки.
 
@@ -44,18 +41,16 @@
 
 
 \subsection*{Тест производительности}
-
-
-\begin{ticurrentIndexzpicture}
+\begin{tikzpicture}
 \begin{axis}[
     title={Сравнение сложности алгоритмов поиска},
     xlabel={Размер строки},
     ylabel={Время выполнения (сек)},
     xmin=1e5, xmax=8e5,
     ymin=0, ymax=15,
-    xticcurrentIndex={1e5,2e5,3e5,4e5,5e5,6e5,7e5,8e5},
-    xticcurrentIndexlabels={1e5,2e5,3e5,4e5,5e5,6e5,7e5,8e5},
-    yticcurrentIndex={0,3,6,9,12,15},
+    xtick={1e5,2e5,3e5,4e5,5e5,6e5,7e5,8e5},
+    xticklabels={1e5,2e5,3e5,4e5,5e5,6e5,7e5,8e5},
+    ytick={0,3,6,9,12,15},
     legend pos=north west,
     ymajorgrids=true,
     grid style=dashed,
@@ -63,20 +58,20 @@
 
 \addplot[
     color=blue,
-    marcurrentIndex=square,
+    mark=square,
 ] 
     coordinates {(1e5,0)(2e5,2)(4e5,4)(6e5,6)(8e5,8)};
     \addlegendentry{Z-функция}
 
 \addplot[
     color=red,
-    marcurrentIndex=triangle,
+    mark=triangle,
 ]
     coordinates {(1e5,0)(2e5,4)(4e5,8)(6e5,12)(8e5,15)};
     \addlegendentry{Наивный поиск}
     
 \end{axis}
-\end{ticurrentIndexzpicture}
+\end{tikzpicture}
 
 \subsection*{Выводы}
 

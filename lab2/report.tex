@@ -89,47 +89,6 @@ node *left, *right
 \textbf{Способ устранения:} Написать функцию \texttt{toLower}, которая будет переводить ключ в нижний регистр перед сравнением. Таким образом, все ключи будут сравниваться без учета регистра.
 
 
-\subsection*{Тест производительности}
-
-\begin{tikzpicture}
-\begin{semilogxaxis}[
-    title={Сравнение времени вставки элементов},
-    xlabel={Количество элементов},
-    ylabel={Время вставки (секунды)},
-    xmin=1, xmax=9000000,
-    ymin=0, ymax=10,
-    xtick={1,10,100,1000,10000,100000,1000000,10000000},
-    ytick={0,1,2,3,4,5,6,7,8,9,10},
-    legend pos=north west,
-    ymajorgrids=true,
-    grid style=dashed,
-]
-
-% Данные для std::set
-\addplot[
-    color=blue,
-    mark=square,
-    ]
-    coordinates {
-    (1,0.1)(10,0.3)(100,0.7)(1000,1.5)(10000,2.5)(100000,4)(1000000,5)(10000000,7)
-    };
-    \addlegendentry{std::set}
-
-% Данные для treap
-\addplot[
-    color=red,
-    mark=triangle,
-    ]
-    coordinates {
-    (1,0.1)(10,0.5)(100,1.2)(1000,2)(10000,3.2)(100000,4.5)(1000000,6)(10000000,8)
-    };
-    \addlegendentry{treap}
-
-\end{semilogxaxis}
-\end{tikzpicture}
-
-Оценка сложности: O($logn$) где, n - количество элементов в дереве.
-
 \subsection*{Выводы}
 
 В данной лабораторной работе было предложено изучить некоторые виды алгоритмов
